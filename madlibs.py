@@ -20,13 +20,13 @@ class Poems:
       if self.madlibs_type == 1:
           random_lib = random.choice(list(self.madlibs_library.keys()))
           self.computer_generated_plays(random_lib)
-      # if not self.multiplayer:
-      #     single_play
-      print(self.multiplayer)
-      print(self.madlibs_type)
 
   def single_play():
       self.player1 = input("Give yourself a name: ")
+
+  def multi_play():
+      self.player1 = input("Give yourself a name player 1: ")
+      self.player2 = input("Give yourself a name player 2: ")
 
   def computer_generated_plays(self, rand_lib):
       lib = self.madlibs_library[rand_lib]
@@ -42,9 +42,6 @@ class Poems:
       print("New: " + str(self.madlibs_answers[rand_lib]))
       print(' '.join(lib_to_list))
       return ' '.join(lib_to_list)
-
-
-
 
 poem_inst = Poems()
 poem_inst.preferences(input("Two player? (Y/N/ Enter to default single)"), input(f"Madlibs type? (Press 'Enter' to default Computer given madlibs or enter corresponding number: {poem_inst.madlibs_type_list}"))
